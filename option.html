@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Option</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-image: url('img/image.png');
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-position: center; 
+            height: 100vh;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            flex-direction: column;
+        }
+        h1{
+            position: absolute;
+            color: palevioletred;
+            top: 0px;
+            left: 0px;
+            margin: 0px;
+            padding: 10px;
+        }
+
+        .container{
+            text-align: center;
+        }
+
+        .btn1, .btn2{
+            text-decoration: none;
+            color: white;
+            background-color: palevioletred;
+            padding: 10px 20px;
+            margin: 10px;
+            display: inline-block;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn1:hover, .btn2:hover {
+            background-color: #d16073;
+        }
+
+        .btn1{
+            position: absolute;
+            top: 240px;
+            left: 205px;
+        }
+
+        .btn2{
+            position: absolute;
+            top: 230px;
+            right: 220px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>What do you want to choose?</h1>
+    <div class="container">
+    <a href="http://127.0.0.1:5500/main/home.html" class="btn1">Portfolio</a>
+    <a href="http://localhost:3000/personal-info" class="btn2">Resume</a>
+</div>
+</body>
+</html>

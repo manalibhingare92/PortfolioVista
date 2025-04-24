@@ -1,0 +1,337 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('img/login.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+   
+}
+
+.container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-gap: 10px;
+  
+    max-width: 1200px;
+    padding: 10px;
+    box-sizing: border-box; 
+}
+
+.work {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    width: 100%; 
+    height: 200px; 
+}
+
+.work img {
+    width: 400px;
+    height: 200px; /* Ensure image covers the whole area */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 10px;
+    transition: transform 0.5s;
+}
+
+.layer {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.6),rgb(236, 131, 168), rgb(228, 196, 207));
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+
+.layer h3 {
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.layer a {
+    margin-top: 10px;
+    color: rgb(178, 88, 118);
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: white;
+    width: 50%;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.work:hover img {
+    transform: scale(1.1);
+}
+
+.work:hover .layer {
+    height: 100%; /* Make sure the layer expands properly on hover */
+}
+
+.btn {
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid rgb(199, 133, 155);
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    background: palevioletred;
+    text-align: center;
+    transition: background 0.5s;
+}
+
+.btn:hover {
+    background: darkviolet; 
+}
+
+
+
+
+/*  css for the chatbot :)
+ Import Google font Poppins */
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@400;500;600&display=swap');
+
+.chatbot {
+    position: fixed;
+    top:100px;
+    right: 0px;
+    bottom: 10px;
+    width: 300px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+        0 32px 64px -48px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.chatbot.active {
+    transform: translateY(0);
+}
+
+.chatbot header {
+    background: palevioletred;
+    padding: 16px;
+    text-align: center;
+    position: relative;
+    z-index: 20;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatbot header h2 {
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.chatbot header .close-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.chatbot header .close-btn:hover {
+    color: #dcdcdc;
+}
+
+.chatbot .chatbox {
+    height: 500px;
+    overflow-y: auto;
+    padding: 30px 20px 70px;
+    background: #f9f9f9;
+    scrollbar-width: thin;
+    scrollbar-color: palevioletred #f9f9f9;
+}
+
+.chatbox::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chatbox::-webkit-scrollbar-track {
+    background: #f9f9f9;
+}
+
+.chatbox::-webkit-scrollbar-thumb {
+    background-color:palevioletred;
+    border-radius: 20px;
+}
+
+.chatbox .chat {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 15px;
+}
+
+.chatbox.incoming span {
+    height: 32px;
+    width: 32px;
+    color: #fff;
+    align-self: flex-end;
+    background: palevioletred;
+    text-align: center;
+    line-height: 32px;
+    border-radius: 50%;
+    margin: 0 10px 7px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chatbox .outgoing {
+    margin: 20px 0;
+    justify-content: flex-end;
+}
+
+.chatbox .chat p {
+    color: #fff;
+    max-width: 75%;
+    font-size: 0.95rem;
+    padding: 12px 16px;
+    border-radius: 10px 10px 0 10px;
+    background: palevioletred;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+}
+
+.chatbox .incoming p {
+    color: #000;
+    background: #f2f2f2;
+    border-radius: 10px 10px 10px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+}
+
+.chatbot .chat-input {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 15px;
+    display: flex;
+    background: #fff;
+    padding: 15px 25px;
+    border-top: 1px solid #ccc;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chat-input textarea {
+    width: 100%;
+    height:30px;
+    border: none;
+    outline: none;
+    font-size: 0.95rem;
+    resize: none;
+    padding: 5px;
+    background: #f7f7f7;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.chat-input textarea:focus {
+    background: #e3f2fd;
+}
+
+.chat-input span {
+    align-self: flex-end;
+    height: 10px;
+    line-height: 55px;
+    color: palevioletred;
+    font-size: 1.35rem;
+    cursor: pointer;
+    visibility: hidden;
+    transition: color 0.3s ease;
+}
+
+.chat-input textarea:valid ~ span {
+    visibility: visible;
+}
+
+.chat-input span:hover {
+    color: #512da8;
+}
+
+/* Image Upload Button */
+.chat-input .image-upload-btn {
+    align-self: flex-end;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: palevioletred#50caf0;
+    font-size: 1.35rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.chat-input .image-upload-btn:hover {
+    color:palevioletred;
+}
+
+
+/*To toggle*/
+
+.chatbot-toggler {
+    position:absolute;
+    right: 5px;
+    top: 45px;
+    background:palevioletred;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+        0 32px 64px -48px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease;
+    z-index: 11;
+}
+
+.chatbot-toggler:hover {
+    background: rgb(164, 88, 114);
+}
+
+.chatbot-toggler span {
+    font-size: 1.8rem;
+}
+
+/*Responsiveness k liye
+@media (max-width: 600px) {
+    .chatbot {
+        width: 90%;
+        left: 5%;
+    }
+}
+*/
